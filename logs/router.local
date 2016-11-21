@@ -1,0 +1,232 @@
+Dec 31 16:00:49 router syslog.info syslogd started: BusyBox v1.21.1
+Dec 31 16:00:49 router user.notice kernel: klogd started: BusyBox v1.21.1 (2014-12-24 07:57:41 CET)
+Dec 31 16:00:49 router user.notice kernel: Linux version 2.6.22.19 (root@tomato) (gcc version 4.2.4) #36 Wed Dec 24 08:10:47 CET 2014
+Dec 31 16:00:49 router user.warn kernel: CPU revision is: 00019749
+Dec 31 16:00:49 router user.warn kernel: wombo_reset set to gpio 23
+Dec 31 16:00:49 router user.warn kernel: Determined physical RAM map:
+Dec 31 16:00:49 router user.warn kernel:  memory: 04000000 @ 00000000 (usable)
+Dec 31 16:00:49 router user.debug kernel: Entering add_active_range(0, 0, 16384) 0 entries of 256 used
+Dec 31 16:00:49 router user.info kernel: Zone PFN ranges:
+Dec 31 16:00:49 router user.warn kernel:   Normal          0 ->    16384
+Dec 31 16:00:49 router user.warn kernel:   HighMem     16384 ->    16384
+Dec 31 16:00:49 router user.info kernel: early_node_map[1] active PFN ranges
+Dec 31 16:00:49 router user.warn kernel:     0:        0 ->    16384
+Dec 31 16:00:49 router user.debug kernel: On node 0 totalpages: 16384
+Dec 31 16:00:49 router user.debug kernel:   Normal zone: 0 pages used for memmap
+Dec 31 16:00:49 router user.debug kernel:   Normal zone: 0 pages reserved
+Dec 31 16:00:49 router user.debug kernel:   Normal zone: 16384 pages, LIFO batch:3
+Dec 31 16:00:49 router user.debug kernel:   HighMem zone: 0 pages used for memmap
+Dec 31 16:00:49 router user.warn kernel: Built 1 zonelists.  Total pages: 16384
+Dec 31 16:00:49 router user.notice kernel: Kernel command line: root=/dev/mtdblock2 noinitrd console=ttyS0,115200
+Dec 31 16:00:49 router user.warn kernel: Primary instruction cache 32kB, physically tagged, 4-way, linesize 32 bytes.
+Dec 31 16:00:49 router user.warn kernel: Primary data cache 32kB, 4-way, linesize 32 bytes.
+Dec 31 16:00:49 router user.info kernel: Synthesized TLB refill handler (20 instructions).
+Dec 31 16:00:49 router user.info kernel: Synthesized TLB load handler fastpath (32 instructions).
+Dec 31 16:00:49 router user.info kernel: Synthesized TLB store handler fastpath (32 instructions).
+Dec 31 16:00:49 router user.info kernel: Synthesized TLB modify handler fastpath (31 instructions).
+Dec 31 16:00:49 router user.warn kernel: PID hash table entries: 512 (order: 9, 2048 bytes)
+Dec 31 16:00:49 router user.warn kernel: CPU: BCM5357 rev 2 pkg 8 at 300 MHz
+Dec 31 16:00:49 router user.warn kernel: Using 150.000 MHz high precision timer.
+Dec 31 16:00:49 router user.info kernel: console [ttyS0] enabled
+Dec 31 16:00:49 router user.warn kernel: Dentry cache hash table entries: 8192 (order: 3, 32768 bytes)
+Dec 31 16:00:49 router user.warn kernel: Inode-cache hash table entries: 4096 (order: 2, 16384 bytes)
+Dec 31 16:00:49 router user.info kernel: Memory: 61220k/65536k available (33k kernel code, 4260k reserved, 2786k data, 128k init, 0k highmem)
+Dec 31 16:00:49 router user.debug kernel: Calibrating delay loop... 149.50 BogoMIPS (lpj=747520)
+Dec 31 16:00:49 router user.warn kernel: Mount-cache hash table entries: 512
+Dec 31 16:00:49 router user.info kernel: NET: Registered protocol family 16
+Dec 31 16:00:49 router user.warn kernel: PCI: no core
+Dec 31 16:00:49 router user.warn kernel: PCI: no core
+Dec 31 16:00:49 router user.warn kernel: PCI: Fixing up bus 0
+Dec 31 16:00:49 router user.info kernel: NET: Registered protocol family 2
+Dec 31 16:00:49 router user.info kernel: Time: MIPS clocksource has been installed.
+Dec 31 16:00:49 router user.warn kernel: IP route cache hash table entries: 1024 (order: 0, 4096 bytes)
+Dec 31 16:00:49 router user.warn kernel: TCP established hash table entries: 2048 (order: 2, 16384 bytes)
+Dec 31 16:00:49 router user.warn kernel: TCP bind hash table entries: 2048 (order: 1, 8192 bytes)
+Dec 31 16:00:49 router user.info kernel: TCP: Hash tables configured (established 2048 bind 2048)
+Dec 31 16:00:49 router user.info kernel: TCP reno registered
+Dec 31 16:00:49 router user.info kernel: squashfs: version 3.0 (2006/03/15) Phillip Lougher
+Dec 31 16:00:49 router user.info kernel: io scheduler noop registered (default)
+Dec 31 16:00:49 router user.info kernel: HDLC line discipline: version $Revision: 4.8 $, maxframe=4096
+Dec 31 16:00:49 router user.info kernel: N_HDLC line discipline registered.
+Dec 31 16:00:49 router user.info kernel: Serial: 8250/16550 driver $Revision: 1.90 $ 2 ports, IRQ sharing disabled
+Dec 31 16:00:49 router user.info kernel: serial8250: ttyS0 at MMIO 0xb8000300 (irq = 8) is a 16550A
+Dec 31 16:00:49 router user.info kernel: PPP generic driver version 2.4.2
+Dec 31 16:00:49 router user.info kernel: MPPE/MPPC encryption/compression module registered
+Dec 31 16:00:49 router user.info kernel: NET: Registered protocol family 24
+Dec 31 16:00:49 router user.info kernel: PPPoL2TP kernel driver, V0.18.3
+Dec 31 16:00:49 router user.info kernel: PPTP driver version 0.8.5
+Dec 31 16:00:49 router user.err kernel: pflash: found no supported devices
+Dec 31 16:00:50 router user.warn kernel: Found an ST compatible serial flash with 128 64KB blocks; total size 8MB
+Dec 31 16:00:50 router user.notice kernel: Creating 5 MTD partitions on "sflash":
+Dec 31 16:00:50 router user.notice kernel: 0x00000000-0x00040000 : "pmon"
+Dec 31 16:00:50 router user.notice kernel: 0x00040000-0x007f0000 : "linux"
+Dec 31 16:00:50 router user.notice kernel: 0x0012cc00-0x006f0000 : "rootfs"
+Dec 31 16:00:50 router user.notice kernel: 0x006f0000-0x007f0000 : "jffs2"
+Dec 31 16:00:50 router user.notice kernel: 0x007f0000-0x00800000 : "nvram"
+Dec 31 16:00:50 router user.warn kernel: _nvram_init: allocat header: 2166095872, size= 61440
+Dec 31 16:00:50 router user.warn kernel: u32 classifier
+Dec 31 16:00:50 router user.warn kernel:     OLD policer on 
+Dec 31 16:00:50 router user.warn kernel: Netfilter messages via NETLINK v0.30.
+Dec 31 16:00:50 router user.warn kernel: nf_conntrack version 0.5.0 (512 buckets, 4096 max)
+Dec 31 16:00:50 router user.warn kernel: ip_tables: (C) 2000-2006 Netfilter Core Team
+Dec 31 16:00:50 router user.info kernel: ipt_account 0.1.21 : Piotr Gasidlo <quaker@barbara.eu.org>, http://www.barbara.eu.org/~quaker/ipt_account/
+Dec 31 16:00:50 router user.warn kernel: net/ipv4/netfilter/tomato_ct.c [Dec 24 2014 07:52:45]
+Dec 31 16:00:50 router user.info kernel: NET: Registered protocol family 1
+Dec 31 16:00:50 router user.info kernel: NET: Registered protocol family 10
+Dec 31 16:00:50 router user.warn kernel: ip6_tables: (C) 2000-2006 Netfilter Core Team
+Dec 31 16:00:50 router user.info kernel: NET: Registered protocol family 17
+Dec 31 16:00:50 router user.info kernel: 802.1Q VLAN Support v1.8 Ben Greear <greearb@candelatech.com>
+Dec 31 16:00:50 router user.info kernel: All bugs added by David S. Miller <davem@redhat.com>
+Dec 31 16:00:50 router user.warn kernel: VFS: Mounted root (squashfs filesystem) readonly.
+Dec 31 16:00:50 router user.info kernel: Freeing unused kernel memory: 128k freed
+Dec 31 16:00:50 router user.warn kernel: Warning: unable to open an initial console.
+Dec 31 16:00:50 router user.warn kernel: emf: module license 'Proprietary' taints kernel.
+Dec 31 16:00:50 router user.debug kernel: PCI: Setting latency timer of device 0000:00:02.0 to 64
+Dec 31 16:00:50 router user.warn kernel: eth0: Broadcom BCM47XX 10/100/1000 Mbps Ethernet Controller 5.110.27.20012
+Dec 31 16:00:50 router user.warn kernel: wl_module_init: passivemode set to 0x0
+Dec 31 16:00:50 router user.debug kernel: PCI: Setting latency timer of device 0000:00:01.0 to 64
+Dec 31 16:00:50 router user.warn kernel: eth1: Broadcom BCM4347 802.11 Wireless Controller 5.110.27.20012
+Dec 31 16:00:50 router user.warn kernel: Algorithmics/MIPS FPU Emulator v1.5
+Dec 31 16:00:50 router user.info kernel: usbcore: registered new interface driver usbfs
+Dec 31 16:00:50 router user.info kernel: usbcore: registered new interface driver hub
+Dec 31 16:00:50 router user.info kernel: usbcore: registered new device driver usb
+Dec 31 16:00:50 router user.info kernel: ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+Dec 31 16:00:50 router user.debug kernel: PCI: Setting latency timer of device 0000:00:04.1 to 64
+Dec 31 16:00:50 router user.info kernel: ehci_hcd 0000:00:04.1: EHCI Host Controller
+Dec 31 16:00:50 router user.info kernel: ehci_hcd 0000:00:04.1: new USB bus registered, assigned bus number 1
+Dec 31 16:00:50 router user.info kernel: ehci_hcd 0000:00:04.1: EHCI Fastpath: New EHCI driver starting
+Dec 31 16:00:50 router user.info kernel: ehci_hcd 0000:00:04.1: irq 5, io mem 0x18004000
+Dec 31 16:00:50 router user.debug hotplug[343]: Attached USB device 1-2:1.0 [INTERFACE=255/2/255 PRODUCT=a5c/bd17/1]
+Dec 31 16:00:50 router user.info kernel: ehci_hcd 0000:00:04.1: USB 0.0 started, EHCI 1.00
+Dec 31 16:00:50 router user.info kernel: usb usb1: configuration #1 chosen from 1 choice
+Dec 31 16:00:50 router user.info kernel: hub 1-0:1.0: USB hub found
+Dec 31 16:00:50 router user.info kernel: hub 1-0:1.0: 2 ports detected
+Dec 31 16:00:50 router user.info kernel: usb 1-2: new high speed USB device using ehci_hcd and address 2
+Dec 31 16:00:50 router user.info kernel: usb 1-2: configuration #1 chosen from 1 choice
+Dec 31 16:00:50 router user.debug hotplug[344]: Attached USB device 1-0:1.0 [INTERFACE=9/0/0 PRODUCT=1d6b/2/206]
+Dec 31 16:00:51 router user.warn kernel: bcm_rpc_up: waiting to be connected
+Dec 31 16:00:51 router user.warn kernel: bcm_rpc_buf_recv_mgn_high: Reason: 0 Dongle Version: 0x5648a89
+Dec 31 16:00:51 router user.warn kernel: bcm_rpc_buf_recv_mgn_high: Connected!
+Dec 31 16:00:51 router user.warn kernel: eth2: Broadcom BCMa8e4 802.11 Wireless Controller 5.100.138.20
+Dec 31 16:00:51 router user.info kernel: usbcore: registered new interface driver dbus_usbdev
+Dec 31 16:00:51 router user.notice kernel: SCSI subsystem initialized
+Dec 31 16:00:51 router user.info kernel: Initializing USB Mass Storage driver...
+Dec 31 16:00:51 router user.info kernel: usbcore: registered new interface driver usb-storage
+Dec 31 16:00:51 router user.info kernel: USB Mass Storage support registered.
+Dec 31 16:00:57 router user.debug kernel: vlan1: add 33:33:00:00:00:01 mcast address to master interface
+Dec 31 16:00:57 router user.debug kernel: vlan1: add 01:00:5e:00:00:01 mcast address to master interface
+Dec 31 16:00:57 router user.info kernel: vlan1: dev_set_allmulti(master, 1)
+Dec 31 16:00:57 router user.info kernel: vlan1: dev_set_promiscuity(master, 1)
+Dec 31 16:00:57 router user.info kernel: device eth0 entered promiscuous mode
+Dec 31 16:00:57 router user.info kernel: device vlan1 entered promiscuous mode
+Dec 31 16:00:58 router user.info kernel: device eth1 entered promiscuous mode
+Dec 31 16:01:00 router user.info kernel: device eth2 entered promiscuous mode
+Dec 31 16:01:00 router user.info kernel: br0: port 3(eth2) entering forwarding state
+Dec 31 16:01:00 router user.info kernel: br0: port 2(eth1) entering forwarding state
+Dec 31 16:01:00 router user.info kernel: br0: port 1(vlan1) entering forwarding state
+Dec 31 16:01:00 router user.warn kernel: vlan2: Setting MAC address to  48 f8 b3 37 d4 85.
+Dec 31 16:01:00 router user.debug kernel: vlan2: add 33:33:00:00:00:01 mcast address to master interface
+Dec 31 16:01:00 router user.debug kernel: vlan2: add 01:00:5e:00:00:01 mcast address to master interface
+Dec 31 16:01:00 router user.info kernel: IMQ starting with 2 devices...
+Dec 31 16:01:00 router user.info kernel: IMQ driver loaded successfully.
+Dec 31 16:01:00 router user.info kernel: 	Hooking IMQ after NAT on PREROUTING.
+Dec 31 16:01:00 router user.info kernel: 	Hooking IMQ before NAT on POSTROUTING.
+Dec 31 16:01:02 router authpriv.warn dropbear[495]: Failed loading /etc/dropbear/dropbear_ecdsa_host_key
+Dec 31 16:01:02 router authpriv.info dropbear[499]: Running in background
+Dec 31 16:01:02 router user.debug dhcpc-event[507]: 182: pptp peerdns disabled
+Dec 31 16:01:03 router daemon.info dnsmasq[511]: started, version 2.71 cachesize 1500
+Dec 31 16:01:03 router daemon.info dnsmasq[511]: compile time options: IPv6 GNU-getopt no-RTC no-DBus no-i18n no-IDN DHCP DHCPv6 no-Lua TFTP no-conntrack ipset Tomato-helper auth no-DNSSEC
+Dec 31 16:01:03 router daemon.info dnsmasq[511]: asynchronous logging enabled, queue limit is 5 messages
+Dec 31 16:01:03 router daemon.info dnsmasq-dhcp[511]: DHCP, IP range 192.168.1.101 -- 192.168.1.149, lease time 1d
+Dec 31 16:01:03 router daemon.info dnsmasq[511]: reading /etc/resolv.dnsmasq
+Dec 31 16:01:03 router daemon.info dnsmasq[511]: using nameserver 192.168.2.1#53
+Dec 31 16:01:03 router daemon.info dnsmasq[511]: read /etc/hosts - 2 addresses
+Dec 31 16:01:03 router daemon.info dnsmasq[511]: read /etc/dnsmasq/hosts/hosts - 15 addresses
+Dec 31 16:01:03 router daemon.info dnsmasq-dhcp[511]: read /etc/dnsmasq/dhcp/dhcp-hosts
+Dec 31 16:01:03 router user.debug init[1]: starting rstats.
+Dec 31 16:01:03 router user.debug init[1]: starting cstats.
+Dec 31 16:01:04 router user.info init[1]: Linksys E2500 v1/v2/v3: Tomato 1.28.0000 MIPSR2-124 K26 USB Max
+Dec 31 16:01:04 router user.notice kernel: Ebtables v2.0 registered
+Dec 31 16:01:04 router user.info kernel: device eth1 left promiscuous mode
+Dec 31 16:01:04 router user.info kernel: br0: port 2(eth1) entering disabled state
+Dec 31 16:01:04 router user.info kernel: device eth2 left promiscuous mode
+Dec 31 16:01:04 router user.info kernel: br0: port 3(eth2) entering disabled state
+Dec 31 16:01:04 router user.info kernel: vlan1: dev_set_allmulti(master, -1)
+Dec 31 16:01:04 router user.info kernel: device eth1 entered promiscuous mode
+Dec 31 16:01:04 router user.info kernel: br0: port 2(eth1) entering forwarding state
+Dec 31 16:01:07 router user.info kernel: device eth2 entered promiscuous mode
+Dec 31 16:01:07 router user.info kernel: br0: port 3(eth2) entering forwarding state
+Dec 31 16:01:07 router user.debug init[1]: 182: pptp peerdns disabled
+Dec 31 16:01:07 router daemon.info dnsmasq[511]: reading /etc/resolv.dnsmasq
+Dec 31 16:01:07 router daemon.info dnsmasq[511]: using nameserver 192.168.2.1#53
+Dec 31 16:01:07 router daemon.info dnsmasq[511]: exiting on receipt of SIGTERM
+Dec 31 16:01:07 router daemon.info dnsmasq[571]: started, version 2.71 cachesize 1500
+Dec 31 16:01:07 router daemon.info dnsmasq[571]: compile time options: IPv6 GNU-getopt no-RTC no-DBus no-i18n no-IDN DHCP DHCPv6 no-Lua TFTP no-conntrack ipset Tomato-helper auth no-DNSSEC
+Dec 31 16:01:07 router daemon.info dnsmasq[571]: asynchronous logging enabled, queue limit is 5 messages
+Dec 31 16:01:07 router daemon.info dnsmasq-dhcp[571]: DHCP, IP range 192.168.1.101 -- 192.168.1.149, lease time 1d
+Dec 31 16:01:07 router daemon.info dnsmasq[571]: reading /etc/resolv.dnsmasq
+Dec 31 16:01:07 router daemon.info dnsmasq[571]: using nameserver 192.168.2.1#53
+Dec 31 16:01:07 router daemon.info dnsmasq[571]: read /etc/hosts - 2 addresses
+Dec 31 16:01:07 router daemon.info dnsmasq[571]: read /etc/dnsmasq/hosts/hosts - 15 addresses
+Dec 31 16:01:07 router daemon.info dnsmasq-dhcp[571]: read /etc/dnsmasq/dhcp/dhcp-hosts
+Nov 20 16:18:13 router daemon.info dnsmasq-dhcp[571]: DHCPREQUEST(br0) 192.168.1.140 6c:72:e7:d6:fe:2f 
+Nov 20 16:18:13 router daemon.info dnsmasq-dhcp[571]: DHCPACK(br0) 192.168.1.140 6c:72:e7:d6:fe:2f iphone
+Nov 20 16:19:01 router cron.err crond[517]: time disparity of 24661457 minutes detected
+Nov 20 16:23:51 router daemon.info dnsmasq-dhcp[571]: DHCPREQUEST(br0) 192.168.1.141 3c:15:c2:c5:f4:32 
+Nov 20 16:23:51 router daemon.info dnsmasq-dhcp[571]: DHCPACK(br0) 192.168.1.141 3c:15:c2:c5:f4:32 mbp
+Nov 20 17:00:01 router syslog.info root: -- MARK --
+Nov 20 18:00:01 router syslog.info root: -- MARK --
+Nov 20 19:00:01 router syslog.info root: -- MARK --
+Nov 20 19:22:25 router daemon.info dnsmasq-dhcp[571]: DHCPDISCOVER(br0) 6c:72:e7:d6:fe:2f 
+Nov 20 19:22:25 router daemon.info dnsmasq-dhcp[571]: DHCPOFFER(br0) 192.168.1.140 6c:72:e7:d6:fe:2f 
+Nov 20 19:22:26 router daemon.info dnsmasq-dhcp[571]: DHCPREQUEST(br0) 192.168.1.140 6c:72:e7:d6:fe:2f 
+Nov 20 19:22:26 router daemon.info dnsmasq-dhcp[571]: DHCPACK(br0) 192.168.1.140 6c:72:e7:d6:fe:2f iphone
+Nov 20 19:27:18 router daemon.info dnsmasq-dhcp[571]: DHCPREQUEST(br0) 192.168.1.141 3c:15:c2:c5:f4:32 
+Nov 20 19:27:18 router daemon.info dnsmasq-dhcp[571]: DHCPACK(br0) 192.168.1.141 3c:15:c2:c5:f4:32 mbp
+Nov 20 19:49:33 router daemon.info dnsmasq-dhcp[571]: DHCPREQUEST(br0) 192.168.1.141 3c:15:c2:c5:f4:32 
+Nov 20 19:49:33 router daemon.info dnsmasq-dhcp[571]: DHCPACK(br0) 192.168.1.141 3c:15:c2:c5:f4:32 mbp
+Nov 20 20:00:01 router syslog.info root: -- MARK --
+Nov 20 20:02:48 router daemon.info dnsmasq-dhcp[571]: DHCPREQUEST(br0) 192.168.1.141 3c:15:c2:c5:f4:32 
+Nov 20 20:02:48 router daemon.info dnsmasq-dhcp[571]: DHCPACK(br0) 192.168.1.141 3c:15:c2:c5:f4:32 mbp
+Nov 20 20:27:27 router daemon.info dnsmasq-dhcp[571]: DHCPREQUEST(br0) 192.168.1.141 3c:15:c2:c5:f4:32 
+Nov 20 20:27:27 router daemon.info dnsmasq-dhcp[571]: DHCPACK(br0) 192.168.1.141 3c:15:c2:c5:f4:32 mbp
+Nov 20 20:28:22 router daemon.info dnsmasq-dhcp[571]: DHCPDISCOVER(br0) 6c:72:e7:d6:fe:2f 
+Nov 20 20:28:22 router daemon.info dnsmasq-dhcp[571]: DHCPOFFER(br0) 192.168.1.140 6c:72:e7:d6:fe:2f 
+Nov 20 20:28:23 router daemon.info dnsmasq-dhcp[571]: DHCPREQUEST(br0) 192.168.1.140 6c:72:e7:d6:fe:2f 
+Nov 20 20:28:23 router daemon.info dnsmasq-dhcp[571]: DHCPACK(br0) 192.168.1.140 6c:72:e7:d6:fe:2f iphone
+Nov 20 20:45:06 router daemon.info dnsmasq-dhcp[571]: DHCPREQUEST(br0) 192.168.1.141 3c:15:c2:c5:f4:32 
+Nov 20 20:45:06 router daemon.info dnsmasq-dhcp[571]: DHCPACK(br0) 192.168.1.141 3c:15:c2:c5:f4:32 mbp
+Nov 20 20:45:19 router daemon.info dnsmasq-dhcp[571]: DHCPREQUEST(br0) 192.168.1.141 3c:15:c2:c5:f4:32 
+Nov 20 20:45:19 router daemon.info dnsmasq-dhcp[571]: DHCPACK(br0) 192.168.1.141 3c:15:c2:c5:f4:32 mbp
+Nov 20 20:45:24 router daemon.info dnsmasq-dhcp[571]: DHCPREQUEST(br0) 192.168.1.141 3c:15:c2:c5:f4:32 
+Nov 20 20:45:24 router daemon.info dnsmasq-dhcp[571]: DHCPACK(br0) 192.168.1.141 3c:15:c2:c5:f4:32 mbp
+Nov 20 20:45:41 router daemon.info dnsmasq-dhcp[571]: DHCPREQUEST(br0) 192.168.1.141 3c:15:c2:c5:f4:32 
+Nov 20 20:45:41 router daemon.info dnsmasq-dhcp[571]: DHCPACK(br0) 192.168.1.141 3c:15:c2:c5:f4:32 mbp
+Nov 20 21:00:01 router syslog.info root: -- MARK --
+Nov 20 21:13:55 router daemon.info dnsmasq-dhcp[571]: DHCPREQUEST(br0) 192.168.1.141 3c:15:c2:c5:f4:32 
+Nov 20 21:13:55 router daemon.info dnsmasq-dhcp[571]: DHCPACK(br0) 192.168.1.141 3c:15:c2:c5:f4:32 mbp
+Nov 20 21:14:37 router daemon.info dnsmasq-dhcp[571]: DHCPREQUEST(br0) 192.168.1.141 3c:15:c2:c5:f4:32 
+Nov 20 21:14:37 router daemon.info dnsmasq-dhcp[571]: DHCPACK(br0) 192.168.1.141 3c:15:c2:c5:f4:32 mbp
+Nov 20 21:16:14 router authpriv.info dropbear[1730]: Child connection from 192.168.1.141:63568
+Nov 20 21:16:17 router authpriv.notice dropbear[1730]: Pubkey auth succeeded for 'root' with key md5 20:bb:9b:87:95:1b:07:4e:8c:0b:66:1e:9d:30:3d:fa from 192.168.1.141:63568
+Nov 20 21:16:20 router authpriv.info dropbear[1730]: Exit (root): Disconnect received
+Nov 20 21:19:26 router authpriv.info dropbear[1848]: Child connection from 192.168.1.141:63641
+Nov 20 21:19:28 router authpriv.notice dropbear[1848]: Pubkey auth succeeded for 'root' with key md5 20:bb:9b:87:95:1b:07:4e:8c:0b:66:1e:9d:30:3d:fa from 192.168.1.141:63641
+Nov 20 21:19:28 router authpriv.info dropbear[1848]: Exit (root): Disconnect received
+Nov 20 21:38:06 router daemon.info dnsmasq-dhcp[571]: DHCPREQUEST(br0) 192.168.1.148 b8:27:eb:cf:32:02 
+Nov 20 21:38:06 router daemon.info dnsmasq-dhcp[571]: DHCPACK(br0) 192.168.1.148 b8:27:eb:cf:32:02 rspi2
+Nov 20 22:00:01 router syslog.info root: -- MARK --
+Nov 20 22:00:58 router daemon.info dnsmasq-dhcp[571]: DHCPREQUEST(br0) 192.168.1.138 00:17:88:23:e0:b5 
+Nov 20 22:00:58 router daemon.info dnsmasq-dhcp[571]: DHCPACK(br0) 192.168.1.138 00:17:88:23:e0:b5 hue
+Nov 20 22:08:06 router daemon.info dnsmasq-dhcp[571]: DHCPDISCOVER(br0) 6c:72:e7:d6:fe:2f 
+Nov 20 22:08:06 router daemon.info dnsmasq-dhcp[571]: DHCPOFFER(br0) 192.168.1.140 6c:72:e7:d6:fe:2f 
+Nov 20 22:08:07 router daemon.info dnsmasq-dhcp[571]: DHCPREQUEST(br0) 192.168.1.140 6c:72:e7:d6:fe:2f 
+Nov 20 22:08:07 router daemon.info dnsmasq-dhcp[571]: DHCPACK(br0) 192.168.1.140 6c:72:e7:d6:fe:2f iphone
+Nov 20 23:00:01 router syslog.info root: -- MARK --
+Nov 21 00:00:01 router syslog.info root: -- MARK --
+Nov 21 00:09:12 router daemon.info dnsmasq-dhcp[571]: DHCPREQUEST(br0) 192.168.1.139 24:a2:e1:34:34:94 
+Nov 21 00:09:12 router daemon.info dnsmasq-dhcp[571]: DHCPACK(br0) 192.168.1.139 24:a2:e1:34:34:94 ipad
+Nov 21 00:16:13 router authpriv.info dropbear[3290]: Child connection from 192.168.1.141:54288
+Nov 21 00:16:14 router authpriv.notice dropbear[3290]: Pubkey auth succeeded for 'root' with key md5 20:bb:9b:87:95:1b:07:4e:8c:0b:66:1e:9d:30:3d:fa from 192.168.1.141:54288
+Nov 21 00:23:34 router authpriv.info dropbear[3409]: Child connection from 192.168.1.141:54689
+Nov 21 00:23:36 router authpriv.notice dropbear[3409]: Pubkey auth succeeded for 'root' with key md5 20:bb:9b:87:95:1b:07:4e:8c:0b:66:1e:9d:30:3d:fa from 192.168.1.141:54689
