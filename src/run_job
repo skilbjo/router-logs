@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+firewall="firewall.local"
+router="router.local"
+user="root"
+log_dir="./../logs/"
+command="ls /"
+
+
+firewall_log(){
+  ssh "$user@$firewall" "ls /"
+}
+
+router_log(){
+  ssh "$user@$router" "ls /"
+}
+
+get_log(){
+  device=$1
+
+  ssh "$user@$device" $command
+}
+
+#firewall_log
+get_log $firewall
+get_log $router
