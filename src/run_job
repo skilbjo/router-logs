@@ -3,25 +3,26 @@
 firewall="firewall.local"
 router="router.local"
 user="root"
-log_dir="./../logs/"
+log_dir="./../logs"
 command="cat /var/log/messages"
 
 get_log(){
   device=$1
   log="$log_dir/$device"
 
-  ssh "$user@$device" "$command" > "$log"
+  #ssh "$user@$device" "$command" > "$log"
 
-  process $device
+  process $device $log
 }
 
 process(){
   device=$1
+  log=$2
   processed="$log_dir/processed"
 
-  awk'BEGIN{OFS=",";} {print substr($0,1,15),substr($0,17,6),substr($0,24,500) ; }' > "$processed"
+  awk 'BEGIN{OFS=",";} {print substr($0,1,15),substr($0,17,8),substr($0,26,500) ; }' "$log"  > "$processed"
 
-  load "$device" "$processed"
+  #load "$device" "$processed"
 }
 
 load() {
@@ -32,4 +33,4 @@ load() {
 }
 
 get_log $firewall
-get_log $router
+#get_log $router
