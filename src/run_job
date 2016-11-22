@@ -20,7 +20,7 @@ process(){
   log=$2
   processed="$log_dir/processed"
 
-  awk -F' ' '{printf "%s %s %s,", $1,$2,$3; printf "%s,%s,%s,", $4,$5,$6;for(i=7;i<=NF;i++)printf "%s ",$i; print""}' "$log"  > "$processed"
+  awk -F' ' '{printf "%s %s %s,%s,", $1,$2,2016,$3; printf "%s,%s,%s,", $4,$5,$6;for(i=7;i<=NF;i++)printf "%s ",$i; print""}' "$log"  > "$processed"
 
   load "$device" "$processed"
 }
