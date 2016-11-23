@@ -4,6 +4,7 @@ firewall="firewall."
 router="router."
 user="root"
 log_dir="./../logs"
+year=$(date +%Y)
 command="cat /var/log/messages"
 
 get_log(){
@@ -20,7 +21,11 @@ process(){
   log=$2
   processed="$log_dir/processed"
 
-  awk -F' ' '{printf "%s %s %s,%s,", $1,$2,2016,$3; printf "%s,%s,%s,", $4,$5,$6;for(i=7;i<=NF;i++)printf "%s ",$i; print""}' "$log"  > "$processed"
+  awk -F' ' '{ \
+    printf "%s %s %s,%s,", $1,$2,2016,$3; \
+    printf "%s,%s,%s,", $4,$5,$6; \
+    printf "\"";for(i=7;i<=NF;i++)printf "%s ",$i; print"\""}' \
+    "$log"  > "$processed"
 
   load "$device" "$processed"
 }
@@ -28,9 +33,14 @@ process(){
 load() {
   device=$1
   processed=$2
+  staging="./../sql/staging.sql"
 
-  psql -h odroid -d router-logs -c "\copy log from '$processed' delimiter ',' csv;"
+  psql -h odroid -d router-logs -c "truncate table log_staging;"
+
+  psql -h odroid -d router-logs -c "\copy log_staging(date,time,device,syslog_tag,program,log) from '$processed' delimiter ',' csv;"
+
+  psql -h odroid -d router-logs -f $staging
 }
 
 get_log $firewall
-#get_log $router
+get_log $router
