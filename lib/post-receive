@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+dir="~/deploy/app"
+app="router-logs"
+deploy_dir="$dir/$app"
+crondir=/etc/cron.d
+
+GIT_WORK_TREE="$deploy_dir" git checkout -f
+
+sudo cp lib/crontab "$cron/$app
+
+cd "$deploy_dir"
+
+## build steps here ##
+
+echo "all done"
+
+exit 0
