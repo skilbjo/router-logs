@@ -2,9 +2,9 @@
 
 get_log(){
   device=$1
+  log_dir="./logs"
   log="$log_dir/$device"
   user="root"
-  log_dir="./logs"
   command="cat /var/log/messages"
 
   ssh "$user@$device" "$command" > "$log"
