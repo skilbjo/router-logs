@@ -4,7 +4,7 @@ get_log(){
   device=$1
   log="$log_dir/$device"
   user="root"
-  log_dir="./../logs"
+  log_dir="./logs"
   command="cat /var/log/messages"
 
   ssh "$user@$device" "$command" > "$log"
@@ -30,7 +30,7 @@ process(){
 load() {
   device=$1
   processed=$2
-  staging="./../sql/staging.sql"
+  staging="./sql/staging.sql"
 
   psql -h odroid -d router-logs -c "truncate table log_staging;"
 
