@@ -7,11 +7,10 @@ crondir=/etc/cron.d
 
 GIT_WORK_TREE="$deploy_dir" git checkout -f
 
-sudo cp lib/crontab "$cron/$app"
-
 cd "$deploy_dir"
 
 ## build steps here ##
+sudo cp lib/crontab "$cron/$app"
 
 echo "all done"
 
