@@ -5,7 +5,7 @@
 
 
 ## jobs ##
-5 * * * * skilbjo cd "$app_dir/src" ; ./run_job >/dev/null
+5 * * * * skilbjo cd "$app_dir" ; ./src/run_job >/dev/null
 
 
 ## syntax ##

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-dir="~/deploy/app"
+dir="/home/skilbjo/deploy/app"
 app="router-logs"
 deploy_dir="$dir/$app"
 cron_dir="/etc/cron.d"
