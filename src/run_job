@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-firewall="firewall"
+firewall="firewall."
 router="router."
 
 source ./src/etl
