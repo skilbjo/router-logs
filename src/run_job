@@ -5,5 +5,5 @@ router="router."
 
 source ./src/etl
 
-get_log $firewall
+#get_log $firewall
 get_log $router
