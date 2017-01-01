@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-firewall="firewall."
+firewall="firewall"
 router="router."
 
 source ./src/etl
 
-#get_log $firewall
+get_log_bsd $firewall
 get_log $router

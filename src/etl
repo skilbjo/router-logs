@@ -12,6 +12,17 @@ get_log(){
   process $device $log
 }
 
+get_log_bsd(){
+  device=$1
+  log_dir="./logs"
+  log="$log_dir/$device"
+  user="root"
+  command="clog /var/log/system.log"
+
+  ssh "$user@$device" "$command" > "$log"
+
+  process $device $log
+}
 process(){
   device=$1
   log=$2
