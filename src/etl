@@ -12,7 +12,7 @@ get_log(){
   process $device $log
 }
 
-get_log_bsd(){
+get_clog(){
   device=$1
   log_dir="./logs"
   log="$log_dir/$device"
@@ -23,6 +23,7 @@ get_log_bsd(){
 
   process $device $log
 }
+
 process(){
   device=$1
   log=$2
@@ -42,12 +43,12 @@ load() {
   device=$1
   processed=$2
   staging="./sql/staging.sql"
+  host="odroid"
+  host="rspi2"          # Pi acting as server since odroid down
 
-  psql -h odroid -d router-logs -c "truncate table log_staging;"
+  psql -h "$host" -d router-logs -c "truncate table log_staging;"
 
-  psql -h odroid -d router-logs -c "\copy log_staging(date,time,device,syslog_tag,program,log) from '$processed' delimiter ',' csv;"
+  psql -h "$host" -d router-logs -c "\copy log_staging(date,time,device,syslog_tag,program,log) from '$processed' delimiter ',' csv;"
 
-  psql -h odroid -d router-logs -f $staging
+  psql -h "$host" -d router-logs -f $staging
 }
-
-

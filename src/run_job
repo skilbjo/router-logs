@@ -5,11 +5,7 @@ router="router."
 
 source ./src/etl
 
-# For PF Sense
-#get_log_bsd $firewall
+get_log $firewall     # For Tomato-shibby
+#get_clog $firewall   # For PF Sense
 
-# For Tomato-shibby
-get_log $firewall
-
-# Router is always Tomato-shibby
-get_log $router
+get_log $router       # Router is always Tomato-shibby
