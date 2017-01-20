@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -eou pipefail
 
 get_log(){
   device=$1

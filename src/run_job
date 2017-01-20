@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -eou pipefail
 
 firewall="firewall."
 pfsense="pfsense."
@@ -7,6 +8,6 @@ router="router."
 source ./src/etl
 
 get_log $firewall     # For Tomato-shibby
-get_clog $pfsense    # For PF Sense
+#get_clog $pfsense    # For PF Sense
 
 get_log $router       # Router is always Tomato-shibby
