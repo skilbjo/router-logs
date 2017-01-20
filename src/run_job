@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
 
 firewall="firewall."
+pfsense="pfsense."
 router="router."
 
 source ./src/etl
 
 get_log $firewall     # For Tomato-shibby
-#get_clog $firewall   # For PF Sense
+get_clog $pfsense    # For PF Sense
 
 get_log $router       # Router is always Tomato-shibby
