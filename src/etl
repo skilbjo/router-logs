@@ -31,11 +31,24 @@ process(){
   processed="$log_dir/processed"
   year=$(date +%Y)
 
-  awk -v year="$year" -F' ' '{ \
-    printf "%s %s %s,%s,", $1,$2,year,$3; \
-    printf "%s,%s,%s,", $4,$5,$6; \
-    printf "\"";for(i=7;i<=NF;i++)printf "%s ",$i; print"\""}' \
-    "$log"  > "$processed"
+  case "$device" in
+    (pfsense | pfsense.)
+      cat "$log" | \
+      sed 's/,/;//g' | \
+      awk -v year="$year" -F' ' '{ \
+        printf "%s %s %s,%s,", $1,$2,year,$3; \
+        printf "%s,%s,%s,", $4,"system.log",$5; \
+        printf "\"";for(i=6;i<=NF;i++)printf "%s ",$i; print"\""}'
+        > "$processed" ;;
+    (router | router. | firewall | firewall. | *)
+      cat "$log" | \
+      sed 's/,/;//g' | \
+      awk -v year="$year" -F' ' '{ \
+        printf "%s %s %s,%s,", $1,$2,year,$3; \
+        printf "%s,%s,%s,", $4,$5,$6; \
+        printf "\"";for(i=7;i<=NF;i++)printf "%s ",$i; print"\""}' \
+        > "$processed" ;;
+    esac
 
   load "$device" "$processed"
 }
