@@ -22,6 +22,7 @@ get_clog(){
 
   ssh "$user@$device" "$command" > "$log"
 
+  exit 1
   process $device $log
 }
 
