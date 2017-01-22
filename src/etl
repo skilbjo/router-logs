@@ -31,8 +31,8 @@ process(){
   processed="$log_dir/processed"
   year=$(date +%Y)
 
-  awk -F' ' '{ \
-    printf "%s %s %s,%s,", $1,$2,2017,$3; \
+  awk -v year="$year" -F' ' '{ \
+    printf "%s %s %s,%s,", $1,$2,year,$3; \
     printf "%s,%s,%s,", $4,$5,$6; \
     printf "\"";for(i=7;i<=NF;i++)printf "%s ",$i; print"\""}' \
     "$log"  > "$processed"
