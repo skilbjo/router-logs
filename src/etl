@@ -39,8 +39,8 @@ process(){
       awk -v year="$year" -F' ' '{ \
         printf "%s %s %s,%s,", $1,$2,year,$3; \
         printf "%s,%s,%s,", $4,"system.log",$5; \
-        printf "\"";for(i=6;i<=NF;i++)printf "%s ",$i; print"\""}'
-        > "$processed" && exit 1 ;;
+        printf "\"";for(i=6;i<=NF;i++)printf "%s ",$i; print"\""}' \
+        > "$processed" ;;
     (router | router. | firewall | firewall. | *)
       cat "$log" | \
       sed 's/,/;/g' | \
