@@ -22,7 +22,6 @@ get_clog(){
 
   ssh "$user@$device" "$command" > "$log"
 
-  exit 1
   process $device $log
 }
 
@@ -41,7 +40,7 @@ process(){
         printf "%s %s %s,%s,", $1,$2,year,$3; \
         printf "%s,%s,%s,", $4,"system.log",$5; \
         printf "\"";for(i=6;i<=NF;i++)printf "%s ",$i; print"\""}'
-        > "$processed" ;;
+        > "$processed" && exit 1 ;;
     (router | router. | firewall | firewall. | *)
       cat "$log" | \
       sed 's/,/;/g' | \
