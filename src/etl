@@ -34,7 +34,7 @@ process(){
   case "$device" in
     (pfsense | pfsense.)
       cat "$log" | \
-      sed 's/,/;//g' | \
+      sed 's/,/;/g' | \
       sed 's|["'\'']||g' | \
       awk -v year="$year" -F' ' '{ \
         printf "%s %s %s,%s,", $1,$2,year,$3; \
@@ -43,7 +43,7 @@ process(){
         > "$processed" ;;
     (router | router. | firewall | firewall. | *)
       cat "$log" | \
-      sed 's/,/;//g' | \
+      sed 's/,/;/g' | \
       sed 's|["'\'']||g' | \
       awk -v year="$year" -F' ' '{ \
         printf "%s %s %s,%s,", $1,$2,year,$3; \
