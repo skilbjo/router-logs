@@ -1,16 +1,25 @@
 #router-logs
 
-## Run manually
+## What
+Internet is full of people up to no good. Just browse your logs and see many
+ICMP requests,
+
+## Deploy
+Run manually
     ./src/run_job
 
-## cron
-    * * * * * cd $dir; ./src/run_job >/dev/null
+Cron
+    $ * * * * * cd $dir; ./src/run_job >/dev/null
 
-<<<<<<< HEAD
-logs λ awk 'BEGIN{OFS=",";} {print substr($0,1,15),substr($0,17,6);for(i=4;i<=NF;i++)printf "%s ",$i;print ""}' router.local {firewall.local,head.router,processed{,.awk},router.local}
+On every push
+    $ cat lib/post-receive; echo WOWE
 
-=======
-## Magic parsing of /var/log/messages in bash
-    awk -F' ' '{printf "%s %s %s,", $1,$2,$3; printf "%s,%s,%s,", $4,$5,$6;for(i=7;i<=NF;i++)printf "%s ",$i; print""}' head.firewall
-    awk -F' ' '{printf "%s %s %s,", $1 ,$2, $3; printf "%s,", $4; print""}' head.firewall
->>>>>>> d0606a495899638b15359fd52839a9c8169d1f45
+## The Magic
+    cat "$log" | \
+    sed 's/,/;/g' | \
+    sed 's|["'\'']||g' | \
+    awk -v year="$year" -F' ' '{ \
+      printf "%s %s %s,%s,", $1,$2,year,$3; \
+      printf "%s,%s,%s,", $4,"system.log",$5; \
+      printf "\"";for(i=6;i<=NF;i++)printf "%s ",$i; print"\""}' \
+      > "$processed" ;;
