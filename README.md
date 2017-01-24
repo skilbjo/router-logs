@@ -6,13 +6,16 @@ ICMP requests,
 
 ## Deploy
 Run manually
+
     ./src/run_job
 
 Cron
+
     $ * * * * * cd $dir; ./src/run_job >/dev/null
 
 On every push
-    $ cat lib/post-receive; echo WOWE
+
+    $ cat lib/post-receive; echo such WOWE !!
 
 ## The Magic
     cat "$log" | \
