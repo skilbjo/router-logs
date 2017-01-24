@@ -2,7 +2,13 @@
 
 ## What
 Internet is full of people up to no good. Just browse your logs and see many
-ICMP requests,
+ICMP requests, ssh attempts, other nastiness. What if someone breaks into your
+network and deletes the log? How can you even search the log?
+
+This project records messages from debian/busybox-based `syslogd` and
+BSD-based `clog` type logging daemons, parses them, and inserts them into a
+postgres database, providing a `sql` interface to otherwise difficult-to-grok
+files.
 
 ## Deploy
 Run manually
