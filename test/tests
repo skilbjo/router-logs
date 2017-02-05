@@ -1,0 +1,20 @@
+#!/usr/bin/env bats
+
+project_dir="./.."
+log_dir="./../logs"
+
+run source "${project_dir}/src/etl"
+
+@test "psql client is available" {
+  command -v psql
+}
+
+@test "We have a /log directory" {
+  run stat "${project_dir}/logs"
+  [ $status = 0 ]
+}
+
+@test "Process fn does what we want" {
+  run process "firewall." "${log_dir}/firewall."
+  [ $status = 0 ]
+}

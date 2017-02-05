@@ -32,3 +32,11 @@ On every push
       printf "%s,%s,%s,", $4,"system.log",$5; \
       printf "\"";for(i=6;i<=NF;i++)printf "%s ",$i; print"\""}' \
       > "$processed" ;;
+
+## Tests
+    before_install:
+      - sudo add-apt-repository ppa:duggan/bats --yes
+      - sudo apt-get update -qq
+      - sudo apt-get install -qq bats
+    script:
+      - bats test/bats

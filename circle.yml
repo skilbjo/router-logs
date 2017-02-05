@@ -1,0 +1,16 @@
+machine:
+  services:
+    - docker
+  environment:
+    DOCKER_REMOTE: quay.io/skilbjo/router-logs
+
+# For circle tests to pass the build - as the project is in bash and has no tests
+test:
+  override:
+    - exit 0
+
+deployment:
+  quay:
+    branch: /.*/
+     commands:
+        - deploy/bin/publish_image
