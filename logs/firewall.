@@ -1,0 +1,11 @@
+Feb 17 19:00:01 firewall syslog.info root: -- MARK --
+Feb 17 19:05:01 firewall authpriv.info dropbear[1801]: Child connection from 192.168.1.2:40628
+Feb 17 19:05:03 firewall authpriv.notice dropbear[1801]: Pubkey auth succeeded for 'root' with key md5 20:bb:9b:87:95:1b:07:4e:8c:0b:66:1e:9d:30:3d:fa from 192.168.1.2:40628
+Feb 17 19:05:03 firewall authpriv.info dropbear[1801]: Exit (root): Disconnect received
+Feb 17 20:00:01 firewall syslog.info root: -- MARK --
+Feb 17 20:05:01 firewall authpriv.info dropbear[1807]: Child connection from 192.168.1.2:40652
+Feb 17 20:05:03 firewall authpriv.notice dropbear[1807]: Pubkey auth succeeded for 'root' with key md5 20:bb:9b:87:95:1b:07:4e:8c:0b:66:1e:9d:30:3d:fa from 192.168.1.2:40652
+Feb 17 20:05:03 firewall authpriv.info dropbear[1807]: Exit (root): Disconnect received
+Feb 17 21:00:01 firewall syslog.info root: -- MARK --
+Feb 17 21:05:01 firewall authpriv.info dropbear[1813]: Child connection from 192.168.1.2:40676
+

@@ -1,20 +1,53 @@
 #!/usr/bin/env bats
 
-project_dir="./.."
-log_dir="./../logs"
+log_dir="logs"
 
-run source "${project_dir}/src/etl"
+# This doesn't work because of set -u
+# See: https://github.com/sstephenson/bats/issues/171
+#setup(){
+  #. src/etl
+#}
 
 @test "psql client is available" {
   command -v psql
 }
 
 @test "We have a /log directory" {
-  run stat "${project_dir}/logs"
+  run stat "${log_dir}"
   [ $status = 0 ]
 }
 
 @test "Process fn does what we want" {
   run process "firewall." "${log_dir}/firewall."
-  [ $status = 0 ]
+  echo "$output"
+  [ "$status" -eq 0 ]
+}
+
+# Instead we'll unit test the fn inside bats
+process(){
+  device=$1
+  log=$2
+  processed="$log_dir/processed"
+  year=$(date +%Y)
+
+  case "$device" in
+    (pfsense | pfsense.)
+      cat "$log" | \
+      sed 's/[,;:]//g' | \
+      sed 's|["'\'']||g' | \
+      awk -v year="$year" -F' ' '{ \
+        printf "%s %s %s,%s,", $1,$2,year,$3; \
+        printf "%s,%s,%s,", $4,"system.log",$5; \
+        printf "\"";for(i=6;i<=NF && i<=15;i++)printf "%s ",substr($i,0,12); print"\""}' \
+        > "$processed" ;;
+    (router | router. | firewall | firewall. | *)
+      cat "$log" | \
+      sed 's/[,;:]//g' | \
+      sed 's|["'\'']||g' | \
+      awk -v year="$year" -F' ' '{ \
+        printf "%s %s %s,%s,", $1,$2,year,$3; \
+        printf "%s,%s,%s,", $4,$5,$6; \
+        printf "\"";for(i=7;i<=NF && i<=15;i++)printf "%s ",substr($i,0,12); print"\""}' \
+        > "$processed" ;;
+    esac
 }
