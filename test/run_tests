@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 set -eou pipefail
 
-bats tests
+bats test/tests
