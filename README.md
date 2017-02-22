@@ -1,5 +1,7 @@
 #router-logs
 
+![CircleCI](https://circleci.com/gh/skilbjo/router-logs/tree/master.svg?style=shield&circle_token=b14acf911433d315298235b0c2fbf7b2670a92a8)
+
 ## What
 Internet is full of people up to no good. Just browse your logs and see many
 ICMP requests, ssh attempts, other nastiness. What if someone breaks into your
