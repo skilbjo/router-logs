@@ -12,6 +12,10 @@ BSD-based `clog` type logging daemons, parses them, and inserts them into a
 postgres database, providing a `sql` interface to otherwise difficult-to-grok
 files.
 
+## Deploy hook
+
+    git remote add pi ssh://user@host/~/deploy/git/router-logs.git
+
 ## Deploy
 Run manually
 
