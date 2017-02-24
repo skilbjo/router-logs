@@ -13,10 +13,10 @@ dependencies:
 
 test:
   override:
-    - test/run_tests
+    - test/run-tests
 
 deployment:
   quay:
     branch: /.*/
     commands:
-      - deploy/bin/publish_image
+      - deploy/bin/publish-image
