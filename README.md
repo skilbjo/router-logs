@@ -18,7 +18,6 @@ files.
 
 ## Deploy
 Run manually
-
     ./deploy/bin/run-job
 
 Cron
