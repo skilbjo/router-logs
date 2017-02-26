@@ -19,11 +19,11 @@ files.
 ## Deploy
 Run manually
 
-    ./src/run_job
+    ./deploy/bin/run-job
 
 Cron
 
-    $ * * * * * cd $dir; ./src/run_job >/dev/null
+    $ * * * * * cd $dir; ./deploy/bin/run-job >/dev/null
 
 On every push
 
