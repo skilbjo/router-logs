@@ -1,0 +1,51 @@
+#!/usr/bin/env bash
+set -eou pipefail
+
+process(){
+  device=$1
+  log="./logs/$device"
+  processed="./logs/processed"
+  year=$(date +%Y)
+
+  case "$device" in
+    (pfsense | pfsense.)
+      cat "$log" | \
+      sed 's/[,;:]//g' | \
+      sed 's|["'\'']||g' | \
+      awk -v year="$year" -F' ' '{ \
+        printf "%s %s %s,%s,", $1,$2,year,$3; \
+        printf "%s,%s,%s,", $4,"system.log",$5; \
+        printf "\"";for(i=6;i<=NF && i<=15;i++)printf "%s ",substr($i,0,12); print"\""}' \
+        > "$processed" ;;
+      #cat "$processed" ;;
+    (router | router. | firewall | firewall. | *)
+      cat "$log" | \
+      sed 's/[,;:]//g' | \
+      sed 's|["'\'']||g' | \
+      awk -v year="$year" -F' ' '{ \
+        printf "%s %s %s,%s,", $1,$2,year,$3; \
+        printf "%s,%s,%s,", $4,$5,$6; \
+        printf "\"";for(i=7;i<=NF && i<=15;i++)printf "%s ",substr($i,0,12); print"\""}' \
+        > "$processed" ;;
+      #cat "$processed" ;;
+    esac
+}
+
+filter() {
+  processed="./logs/processed"
+
+  #search="apr writing"
+  search="syslog"
+
+  cat "$processed" | grep "$search"
+}
+
+process "firewall"
+#process "router"
+#process "pfsense"
+
+filter
+
+
+
+
