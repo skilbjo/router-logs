@@ -10,6 +10,8 @@ get_log(){
 
   ssh "$user@$device" "$command" > "$log"
 
+  sleep 2 # backoff, since I've seen errors when working on large files
+
   process $device $log
 }
 
@@ -21,6 +23,8 @@ get_clog(){
   command="clog /var/log/system.log"
 
   ssh "$user@$device" "$command" > "$log"
+
+  sleep 2 # backoff, since I've seen errors when working on large files
 
   process $device $log
 }

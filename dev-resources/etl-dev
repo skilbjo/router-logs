@@ -17,7 +17,6 @@ process(){
         printf "%s,%s,%s,", $4,"system.log",$5; \
         printf "\"";for(i=6;i<=NF && i<=15;i++)printf "%s ",substr($i,0,12); print"\""}' \
         > "$processed" ;;
-      #cat "$processed" ;;
     (router | router. | firewall | firewall. | *)
       cat "$log" | \
       sed 's/[,;:]//g' | \
@@ -27,25 +26,27 @@ process(){
         printf "%s,%s,%s,", $4,$5,$6; \
         printf "\"";for(i=7;i<=NF && i<=15;i++)printf "%s ",substr($i,0,12); print"\""}' \
         > "$processed" ;;
-      #cat "$processed" ;;
     esac
 }
 
 filter() {
   processed="./logs/processed"
+  search="on cpsw0"
+  month=$(date +%b)
 
-  #search="apr writing"
-  search="syslog"
-
-  cat "$processed" | grep "$search"
+  cat "$processed" | grep "$month" | grep "$search"
 }
 
-process "firewall"
-#process "router"
-#process "pfsense"
+_cat(){
+  processed="./logs/processed"
+
+  cat "$processed"
+}
+
+#process "firewall."
+#process "router."
+process "pfsense."
 
 filter
-
-
-
+#_cat
 
