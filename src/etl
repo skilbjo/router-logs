@@ -10,8 +10,6 @@ get_log(){
 
   ssh "$user@$device" "$command" > "$log"
 
-  sleep 2 # backoff, since I've seen errors when working on large files
-
   process $device $log
 }
 
@@ -24,8 +22,6 @@ get_clog(){
 
   ssh "$user@$device" "$command" > "$log"
 
-  sleep 2 # backoff, since I've seen errors when working on large files
-
   process $device $log
 }
 
@@ -37,7 +33,7 @@ process(){
 
   case "$device" in
     (pfsense | pfsense.)
-      cat "$log" | \
+      cat "$log" | (read; cat) | \
       sed 's/[,;:]//g' | \
       sed 's|["'\'']||g' | \
       awk -v year="$year" -F' ' '{ \
