@@ -3,10 +3,10 @@ begin;
 commit;
 
 begin;
-  drop table if exists log;
-  drop table if exists log_staging;
+  drop table if exists fx.log;
+  drop table if exists fx.log_staging;
 
-  create table log_staging (
+  create table fx.log_staging (
     id              serial,
     date            date,
     time            time,
@@ -16,7 +16,7 @@ begin;
     log             text
   );
 
-  create table log (
+  create table fx.log (
     id              serial,
     date            date,
     time            time,

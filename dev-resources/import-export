@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+set -eou pipefail
+
+export() {
+  db_name="router-logs"
+  date=$(date +%F)
+  sql_file="~/${db_name}-${date}.sql"
+  gnu_file="${sql_file}.gz"
+
+  ssh -p 48 pi@router. "pg_dump -c $db_name > $sql_file"      # Create backup
+
+  ssh -p 48 pi@router. "gzip -c $sql_file > $gnu_file"        # GNU Zip
+}
+
+import() {
+  cat "$gnu_file" | ssh skilbjo@pi4 "cat > $gnu_file"         # ssh transfer
+
+  ssh -p 46 router. "gzip -df $gnu_file"                      # GNU unZip
+
+  ssh -p 46 router. "psql -d production < $sql_file"          # psql load
+}
+
+export
+
