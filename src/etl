@@ -59,12 +59,10 @@ load() {
   device=$1
   processed=$2
   staging="./sql/staging.sql"
-  host="odroid"
-  host="rspi2"          # Pi acting as server since odroid down
 
-  psql -h "$host" -d router-logs -c "truncate table log_staging;"
+  psql $db_uri -c "truncate table log_staging;"
 
-  psql -h "$host" -d router-logs -c "\copy log_staging(date,time,device,syslog_tag,program,log) from '$processed' delimiter ',' csv;"
+  psql $db_uri -c "\copy log_staging(date,time,device,syslog_tag,program,log) from '$processed' delimiter ',' csv;"
 
-  psql -h "$host" -d router-logs -f $staging
+  psql $db_uri -f $staging
 }
