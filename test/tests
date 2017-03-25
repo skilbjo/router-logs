@@ -1,6 +1,6 @@
 #!/usr/bin/env bats
 
-log_dir="logs"
+log_dir="resources"
 
 # This doesn't work because of set -u
 # See: https://github.com/sstephenson/bats/issues/171
