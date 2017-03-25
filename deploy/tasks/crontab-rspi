@@ -6,4 +6,4 @@
   app_dir="/home/pi/deploy/app/router-logs"
 
 ## jobs ##
-5 * * * * pi cd "$app_dir" ; $cmd >/dev/null
+5 * * * * pi . /home/pi/.profilelocal ; cd "$app_dir" ; $cmd >/dev/null

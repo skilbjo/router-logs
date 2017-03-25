@@ -1,5 +1,5 @@
 -- Note, need to install postgresql-contrib on the server for the following
-create extention tablefunc;
+create extension tablefunc;
 
 create or replace function crosstabcode (tablename varchar, rowc varchar, colc varchar, cellc varchar, celldatatype varchar) returns varchar language plpgsql as $$
 declare
@@ -22,5 +22,5 @@ begin
 end
 $$ ;
 
-select crosstabcode('log','date','device','count(*)','text'); ;
+select crosstabcode('dw.log','date','device','count(*)','text'); ;
 

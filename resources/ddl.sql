@@ -1,12 +1,10 @@
-begin;
-  create database router-logs;
-commit;
+-- begin; create schema dw; commit;
 
 begin;
-  drop table if exists log;
-  drop table if exists log_staging;
+  drop table if exists dw.log;
+  drop table if exists dw.log_staging;
 
-  create table log_staging (
+  create table dw.log_staging (
     id              serial,
     date            date,
     time            time,
@@ -16,7 +14,7 @@ begin;
     log             text
   );
 
-  create table log (
+  create table dw.log (
     id              serial,
     date            date,
     time            time,

@@ -1,16 +1,16 @@
 begin;
-  insert into log (
+  insert into dw.log (
     date, time, device, syslog_tag, program, log
   )
   with candidate_records as (
     select staging.*
-    from log
-      right join log_staging staging on log.date = staging.date
-                                    and log.time = staging.time
-                                    and log.device = staging.device
-                                    and log.syslog_tag = staging.syslog_tag
-                                    and log.program = staging.program
-                                    and log.log = staging.log
+    from dw.log
+      right join dw.log_staging staging on log.date = staging.date
+                                       and log.time = staging.time
+                                       and log.device = staging.device
+                                       and log.syslog_tag = staging.syslog_tag
+                                       and log.program = staging.program
+                                       and log.log = staging.log
     where
       log.id is null
   )
