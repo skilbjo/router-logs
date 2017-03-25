@@ -3,8 +3,8 @@ set -eou pipefail
 
 process(){
   device=$1
-  log="./logs/$device"
-  processed="./logs/processed"
+  log="./resources/$device"
+  processed="./resources/processed"
   year=$(date +%Y)
 
   case "$device" in
@@ -30,7 +30,7 @@ process(){
 }
 
 filter() {
-  processed="./logs/processed"
+  processed="./resources/processed"
   search="on cpsw0"
   month=$(date +%b)
 
@@ -38,7 +38,7 @@ filter() {
 }
 
 _cat(){
-  processed="./logs/processed"
+  processed="./resources/processed"
 
   cat "$processed"
 }
