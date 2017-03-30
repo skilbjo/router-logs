@@ -1,5 +1,5 @@
-FROM armhf/alpine
-#FROM gliderlabs/alpine:latest # For x86
+#FROM armhf/alpine # for ARM
+FROM gliderlabs/alpine:latest
 
 ENV CONSUL_PREFIX __CONSUL_PREFIX__
 ENV CONSUL_SECRET_PREFIX __CONSUL_SECRET_PREFIX__
