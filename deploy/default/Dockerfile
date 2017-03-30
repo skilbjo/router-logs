@@ -1,4 +1,5 @@
-FROM gliderlabs/alpine:latest
+FROM armhf/alpine
+#FROM gliderlabs/alpine:latest # For x86
 
 ENV CONSUL_PREFIX __CONSUL_PREFIX__
 ENV CONSUL_SECRET_PREFIX __CONSUL_SECRET_PREFIX__
