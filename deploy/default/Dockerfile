@@ -5,10 +5,10 @@ ENV QEMU_EXECVE 1
 ENV CONSUL_PREFIX __CONSUL_PREFIX__
 ENV CONSUL_SECRET_PREFIX __CONSUL_SECRET_PREFIX__
 
-COPY deploy/qemu/cross-build-end      /usr/bin/
-COPY deploy/qemu/cross-build-start    /usr/bin/
-COPY deploy/qemu/qemu-arm-static      /usr/bin/
-COPY deploy/qemu/sh-shim              /usr/bin/
+COPY ./deploy/qemu/cross-build-end      /usr/bin/
+COPY ./deploy/qemu/cross-build-start    /usr/bin/
+COPY ./deploy/qemu/qemu-arm-static      /usr/bin/
+COPY ./deploy/qemu/sh-shim              /usr/bin/
 
 RUN [ "cross-build-start" ]
 
@@ -23,10 +23,10 @@ RUN apk update && \
     echo "America/Los_Angeles" > /etc/timezone && \
     rm -rf /var/cache/apk/*
 
-COPY deploy                         /usr/local/deploy
-COPY deploy/default/bashrc          /root/.bashrc
-COPY deploy/default/vimrc           /root/.vimrc
+COPY ./deploy                         /usr/local/deploy
+COPY ./deploy/default/bashrc          /root/.bashrc
+COPY ./deploy/default/vimrc           /root/.vimrc
 
-COPY src                            /src
+COPY ./src                            /src
 
 RUN [ "cross-build-end" ]
