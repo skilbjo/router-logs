@@ -7,7 +7,11 @@ ENV CONSUL_SECRET_PREFIX __CONSUL_SECRET_PREFIX__
 
 COPY deploy/qemu/.                    /usr/bin/
 
-RUN [ "cross-build-start" ]
+RUN ls -l usr/bin/cross-* && \
+    ls -l usr/bin/qemu-* && \
+    ls -l usr/bin/sh-shim && \
+    cat /usr/bin/cross-build-start && \
+    usr/bin/cross-build-start
 
 RUN apk add --no-cache --virtual build-deps \
     curl git coreutils linux-headers
