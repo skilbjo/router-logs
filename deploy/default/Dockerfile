@@ -5,10 +5,7 @@ ENV QEMU_EXECVE 1
 ENV CONSUL_PREFIX __CONSUL_PREFIX__
 ENV CONSUL_SECRET_PREFIX __CONSUL_SECRET_PREFIX__
 
-COPY ./deploy/qemu/cross-build-end      /usr/bin/
-COPY ./deploy/qemu/cross-build-start    /usr/bin/
-COPY ./deploy/qemu/qemu-arm-static      /usr/bin/
-COPY ./deploy/qemu/sh-shim              /usr/bin/
+COPY deploy/qemu/.                    /usr/bin/
 
 RUN [ "cross-build-start" ]
 
