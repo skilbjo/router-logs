@@ -19,4 +19,5 @@ deployment:
   quay:
     branch: /.*/
     commands:
+      - docker run --rm --privileged multiarch/qemu-user-static:register --reset
       - deploy/bin/publish-image
