@@ -3,6 +3,8 @@ FROM armhf/alpine:3.5
 ENV CONSUL_PREFIX __CONSUL_PREFIX__
 ENV CONSUL_SECRET_PREFIX __CONSUL_SECRET_PREFIX__
 
+ENV QEMU_EXECVE 1
+
 COPY deploy/qemu/qemu-arm-static            /usr/bin/
 
 RUN ["/usr/bin/qemu-arm-static","/sbin/apk","-U","add", \

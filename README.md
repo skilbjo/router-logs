@@ -56,3 +56,11 @@ https://hub.docker.com/r/alexellis2/visualizer-arm/
     docker run -it --rm cailloumajor/alpine-armhf-qemu /usr/bin/qemu-arm-static /bin/sh
     / # qemu-arm-static /sbin/apk help
 
+https://hub.docker.com/r/gewoonmaarten/alpine-arm-qemu/~/dockerfile/
+    FROM container4armhf/armhf-alpine
+
+    ENV QEMU_EXECVE 1
+
+    COPY . /usr/bin
+
+    RUN [ "qemu-arm-static", "/bin/sh", "-c", "ln -s resin-xbuild /usr/bin/cross-build-start; ln -s resin-xbuild /usr/bin/cross-build-end; ln /bin/sh /bin/sh.real" ]
