@@ -46,3 +46,13 @@ On every push
       - sudo apt-get install -qq bats
     script:
       - bats test/bats
+
+## QEMU Links
+https://blog.hypriot.com/post/setup-simple-ci-pipeline-for-arm-images/
+https://github.com/resin-io-projects/armv7hf-debian-qemu
+https://hub.docker.com/r/alexellis2/visualizer-arm/
+
+## QEMU
+    docker run -it --rm cailloumajor/alpine-armhf-qemu /usr/bin/qemu-arm-static /bin/sh
+    / # qemu-arm-static /sbin/apk help
+

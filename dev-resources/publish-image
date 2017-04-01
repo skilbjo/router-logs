@@ -1,0 +1,39 @@
+#!/bin/bash
+set -eux
+
+# Environment vars
+: ${APP_NAME:=router-logs}
+: ${DOCKER_REGISTRY:='quay.io'}
+: ${DOCKER_REMOTE:="quay.io/skilbjo/$APP_NAME"}
+: ${EMAIL:='skilbjo@github.com'}
+: ${CONSUL_PREFIX:="$(echo $APP_NAME | tr '-' '_')/config"}
+: ${CONSUL_SECRET_PREFIX:="$(echo $APP_NAME | tr '-' '_')/secrets"}
+
+# Use default Dockerfile if one doesn't exist
+cat '../deploy/default/Dockerfile' | \
+  sed "s;__CONSUL_PREFIX__;${CONSUL_PREFIX};" | \
+  sed "s;__CONSUL_SECRET_PREFIX__;${CONSUL_SECRET_PREFIX};" \
+  > ../Dockerfile
+
+IMAGE_TAG='dev'
+
+# Login
+#docker login -u $QUAY_ROBOT_USERNAME -p $QUAY_ROBOT_PASSWORD -e $EMAIL $DOCKER_REGISTRY
+
+cd ..
+
+# Add git revision
+echo $(git rev-parse HEAD) > .tag
+
+# Build
+docker build --rm -t $DOCKER_REMOTE:$IMAGE_TAG .
+
+# Tag
+docker tag $DOCKER_REMOTE:$IMAGE_TAG $DOCKER_REMOTE
+
+# Push it real good
+docker push $DOCKER_REMOTE
+
+# Cleanup
+rm Dockerfile
+rm .tag
