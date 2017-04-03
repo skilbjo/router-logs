@@ -20,4 +20,5 @@ COPY deploy                         /usr/local/deploy
 COPY deploy/default/bashrc          /root/.bashrc
 COPY deploy/default/vimrc           /root/.vimrc
 
+COPY resources                      /resources
 COPY src                            /src
