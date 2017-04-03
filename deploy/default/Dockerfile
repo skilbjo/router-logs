@@ -9,7 +9,8 @@ COPY deploy/qemu/qemu-arm-static    /usr/bin/
 
 RUN ["qemu-arm-static","/sbin/apk","-U","add", \
                        "postgresql-client",\
-                       "curl","vim","bash","bash-completion",\
+                       "curl","vim","openssh",\
+                       "bash","bash-completion",\
                        "tzdata","bc"]
 
 RUN ["qemu-arm-static","/bin/cp","usr/share/zoneinfo/America/Los_Angeles","/etc/localtime"]
