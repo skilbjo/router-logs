@@ -10,7 +10,10 @@ set -eux
 : ${CONSUL_SECRET_PREFIX:="$(echo $APP_NAME | tr '-' '_')/secrets"}
 
 # Use default Dockerfile if one doesn't exist
-cat '../deploy/default/Dockerfile' | \
+# for ARM cat '../deploy/default/Dockerfile' | \
+
+# for x86
+cat '../deploy/default/Dockerfile.x86' | \
   sed "s;__CONSUL_PREFIX__;${CONSUL_PREFIX};" | \
   sed "s;__CONSUL_SECRET_PREFIX__;${CONSUL_SECRET_PREFIX};" \
   > ../Dockerfile
