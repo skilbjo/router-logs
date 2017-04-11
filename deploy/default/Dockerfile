@@ -17,12 +17,13 @@ RUN ["qemu-arm-static","/bin/cp","usr/share/zoneinfo/America/Los_Angeles","/etc/
 RUN ["qemu-arm-static","/bin/echo","America/Los_Angeles",">","/etc/timezone"]
 RUN ["qemu-arm-static","/bin/rm","-rf","/var/cache/apk/*"]
 
-RUN ["qemu-arm-static","/bin/mkdir","-p","~/.ssh"]
-RUN ["qemu-arm-static","/bin/touch","~/.ssh/id_rsa"]
-RUN ["qemu-arm-static","/bin/chmod","600","~/.ssh/id_rsa"]
+RUN ["qemu-arm-static","/bin/mkdir","-p","/root/.ssh"]
+RUN ["qemu-arm-static","/bin/touch","/root/.ssh/id_rsa"]
+RUN ["qemu-arm-static","/bin/chmod","600","/root/.ssh/id_rsa"]
 
 # Below doesn't work because git clone doesn't work, because can't cd into anything at build time
 # (git clone is git init Dir && cd Dir && git remote add origin [url] && git fetch)
+
 #RUN ["qemu-arm-static","/bin/mkdir","-p","~/.vim/bundle"]
 #RUN ["qemu-arm-static","/usr/bin/git","clone","http://github.com/Shougo/neobundle.vim"]
 #RUN ["qemu-arm-static","/usr/bin/curl","https://raw.githubusercontent.com/skilbjo/dotfiles/master/vim/vimrc","-o","~/.vimrc"]
