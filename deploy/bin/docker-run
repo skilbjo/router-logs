@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+set -eou pipefail
+
+env_vars="-e id_rsa=$(cat ~/.ssh/id_rsa) -e db_uri=$(echo $db_uri)"
+job_cmd="usr/local/deploy/bin/run-job"
+img="quay.io/skilbjo/router-logs:qemu"
+cmd="docker run $env_vars --rm $img $job_cmd"
+
+docker run --rm quay.io/skilbjo/router-logs usr/local/deploy/bin/run-job
