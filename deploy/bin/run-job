@@ -4,6 +4,11 @@ set -eou pipefail
 cmd="src/monitor"
 
 # Prereqs
-echo "$id_rsa" >> ~/.ssh/id_rsa
+mkdir -p ~/.ssh && \
+  echo "firewall.,192.168.1.1 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAwDBSze6Ek0EOwUABRIEmt51rkBFdajJxzqIU4PksSk/Xuv+z4lFHV74ptGk6EtYosdak4kj7US4Gr/UBx54atzS3C7bNdruw3p2njgo+qZDJ+PJBHySCw+LyF8pxi9y/bIeQSCrTf/MHffbqkqaTAd+sI8h2aasIznTI0O+bocEdXvewhLfLZqQ2zy5mTMbpzA3Sz1LjTBiKkW7Sh/THXmMlGAGqv0dAhm3HPzT7Ps6JX7AQ0/rGrppNGlhAJqJoZpiW46WGGvhE9oWQ1ZtzyBCNo+pZd7f+VKhE2S2zZNS1zRqC0POQ6UgErwR3HTMEjVRkiaglkljB9SVMKoWRv/OLPU=" >> ~/.ssh/known_hosts && \
+  touch ~/.ssh/id_rsa && \
+  chmod 600 ~/.ssh/id_rsa && \
+  echo "$id_rsa" >> ~/.ssh/id_rsa
+
 
 exec $cmd $@

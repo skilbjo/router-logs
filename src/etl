@@ -3,7 +3,7 @@ set -eou pipefail
 
 get_log(){
   device=$1
-  log_dir="./resources/"
+  log_dir="resources/"
   log="$log_dir/$device"
   user="root"
   command="cat /var/log/messages"
@@ -15,7 +15,7 @@ get_log(){
 
 get_clog(){
   device=$1
-  log_dir="./resources/"
+  log_dir="resources/"
   log="$log_dir/$device"
   user="root"
   command="clog /var/log/system.log"
@@ -58,7 +58,7 @@ process(){
 load() {
   device=$1
   processed=$2
-  staging="./sql/staging.sql"
+  staging="resources/staging.sql"
 
   psql $db_uri -c "truncate table log_staging;"
 
