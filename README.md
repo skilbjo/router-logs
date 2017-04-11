@@ -64,3 +64,7 @@ https://hub.docker.com/r/gewoonmaarten/alpine-arm-qemu/~/dockerfile/
     COPY . /usr/bin
 
     RUN [ "qemu-arm-static", "/bin/sh", "-c", "ln -s resin-xbuild /usr/bin/cross-build-start; ln -s resin-xbuild /usr/bin/cross-build-end; ln /bin/sh /bin/sh.real" ]
+
+## Env vars
+
+    docker run -it -e id_rsa="$(head -n -1 ~/.ssh/id_rsa | tail -n +2)" -e db_uri="$(echo $db_uri)" quay.io/skilbjo/router-logs bash

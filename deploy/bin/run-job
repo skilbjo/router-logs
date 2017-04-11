@@ -1,8 +1,9 @@
-#!/bin/sh
-set -e
+#!/bin/bash
+set -eou pipefail
 
-BASE_CMD="/usr/bin/envconsul-launch -once -prefix ${CONSUL_PREFIX} -secret-no-prefix=${CONSUL_SECRET_PREFIX}"
-#CMD="$BASE_CMD src/etl"
-CMD="src/monitor"
+cmd="src/monitor"
 
-exec $CMD $@
+# Prereqs
+echo "$id_rsa" >> ~/.ssh/id_rsa
+
+exec $cmd $@

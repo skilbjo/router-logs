@@ -13,12 +13,12 @@ set -eux
 # for ARM cat '../deploy/default/Dockerfile' | \
 
 # for x86
-cat '../deploy/default/Dockerfile.x86' | \
+cat '../deploy/default/Dockerfile' | \
   sed "s;__CONSUL_PREFIX__;${CONSUL_PREFIX};" | \
   sed "s;__CONSUL_SECRET_PREFIX__;${CONSUL_SECRET_PREFIX};" \
   > ../Dockerfile
 
-IMAGE_TAG='dev'
+IMAGE_TAG='qemu'
 
 # Login
 #docker login -u $QUAY_ROBOT_USERNAME -p $QUAY_ROBOT_PASSWORD -e $EMAIL $DOCKER_REGISTRY
