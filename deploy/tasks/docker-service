@@ -1,6 +1,0 @@
-docker service create \
-  -e id_rsa="$(cat ~/.ssh/id_rsa)" \
-  -e db_uri="$(echo $db_uri)" \
-  --name router-logs \
-  quay.io/skilbjo/router-logs:qemu \
-  usr/local/deploy/bin/run-job
