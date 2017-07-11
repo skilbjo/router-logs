@@ -29,7 +29,6 @@ cd ..
 echo $(git rev-parse HEAD) > .tag
 
 # Build
-lein uberjar
 docker build --rm -t $docker_remote:$image_tag .
 
 # Tag
