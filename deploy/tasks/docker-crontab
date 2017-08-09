@@ -6,5 +6,5 @@
   app_dir="/home/skilbjo/deploy/app/router-logs"
 
 ## jobs ##
-* * * * * skilbjo . /home/skilbjo/.profilelocal; cd "$app_dir" ; $cmd > /tmp/docker.log
+* * * * * skilbjo . /home/skilbjo/.profilelocal && eval "$(keychain --quiet --eval id_rsa)" >>tmp/router-logs.log 2>&1; cd "$app_dir" ; $cmd >>/tmp/docker.log
 #5 * * * * skilbjo . /home/skilbjo/.profilelocal; cd "$app_dir" ; $cmd >/dev/null
