@@ -5,9 +5,15 @@ firewall="firewall."
 pfsense="pfsense."
 router="router."
 
+## pfsense now acting as first dns server; does not respect these hostnames
+pfsense="192.168.0.1"
+firewall="192.168.1.1"
+router="192.168.2.1"
+pfsense2="192.168.3.1"
+
 source ./src/etl
 
-get_log $firewall    # For Tomato-shibby
-get_clog $pfsense    # For PF Sense
-
-get_log $router      # Router is always Tomato-shibby
+get_clog "$pfsense"    # For PF Sense
+get_log "$firewall"    # For Tomato-shibby
+get_log "$router"      # Router is always Tomato-shibby
+get_clog "$pfsense2"   # For PF Sense
