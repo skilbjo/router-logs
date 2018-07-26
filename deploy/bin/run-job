@@ -6,9 +6,10 @@ cmd="src/monitor"
 function prereq() {
   # Prereqs -- as qemu won't do shell redirection
   ## Also, we're in Docker! If running on bare metal, don't run this fn
-  echo "firewall.,192.168.1.1 ecdsa-sha2-nistp521 AAAAE2VjZHNhLXNoYTItbmlzdHA1MjEAAAAIbmlzdHA1MjEAAACFBAEZvI+/annjsRveX2elTynOzIrTyM4OWxgS3KniH3tGbpOrB84kxUJNKg7fxFIHT0zHqe9k0RCoIcEkLMztIjBTuQEoHYettyL8zbH0wqKv3sE8AjYNc1TR2zi8WurZt0Z2jbhoRRhekNrVZ1AfHipX/gaVJLnxSTYmVhiCbFGqLbHGjA==" >> ~/.ssh/known_hosts && \
+  echo "pfsense.,192.168.0.1 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOe6Rd5ZChJFz3uxLLrBH4bU8ZCcWgbbOXMPRkP+lXlu" >> ~/.ssh/known_hosts && \
+    echo "firewall.,192.168.1.1 ecdsa-sha2-nistp521 AAAAE2VjZHNhLXNoYTItbmlzdHA1MjEAAAAIbmlzdHA1MjEAAACFBAEZvI+/annjsRveX2elTynOzIrTyM4OWxgS3KniH3tGbpOrB84kxUJNKg7fxFIHT0zHqe9k0RCoIcEkLMztIjBTuQEoHYettyL8zbH0wqKv3sE8AjYNc1TR2zi8WurZt0Z2jbhoRRhekNrVZ1AfHipX/gaVJLnxSTYmVhiCbFGqLbHGjA==" >> ~/.ssh/known_hosts && \
     echo "router.,192.168.2.1 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCzAqkE7apyj0WBrzrNavg/4UXEHA7kEpY7Z15dA2NsZJs63peC5DARmJ2yFcR0FxzG/kFOi7CpLUv9bmdi2Nl+KCNStMsEiHUt75iwA6jtkTYa4/WjDmpQiAg0EVBGNv3uPa/NEAdQAPzuUoRXt+6j7qOv/+RqOZSJ2ZJmlGqyfQ4IXGqYLWE7OWOxHlx8MySPG99R8wNw0dlcLQnI42eBQueQirr9wwPKhwvCJNhf1WyVndJYjDYEgLbXctu400Z/L9fnkao7vF3mG3lo4TiDMtZtyiUH6ITnCy5h/Eqo9/jnQ4yFlHCNTpA27ob+WA3GD+f/joTh/iqnrRlt7j6D" >> ~/.ssh/known_hosts && \
-    echo "pfsense.,192.168.0.1 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOe6Rd5ZChJFz3uxLLrBH4bU8ZCcWgbbOXMPRkP+lXlu" >> ~/.ssh/known_hosts && \
+    echo "pfsense2.,192.168.3.1 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILdKMdE6yditvpS27SjVYHiteTzp8QWVToCOlIor5WLV" >> ~/.ssh/known_hosts && \
     touch ~/.ssh/id_rsa && \
     chmod 400 ~/.ssh/id_rsa && \
     echo "$id_rsa" >> ~/.ssh/id_rsa

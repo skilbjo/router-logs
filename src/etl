@@ -32,7 +32,7 @@ process(){
   year=$(date +%Y)
 
   case "$device" in
-    (pfsense | pfsense.)
+    (pfsense | pfsense. | pfsense2 | pfsense2. | 192.168.0.1 | 192.168.3.1 )
       cat "$log" | (read; cat) | \
       sed 's/[,;:]//g' | \
       sed 's|["'\'']||g' | \
