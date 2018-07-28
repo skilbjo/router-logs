@@ -1,10 +1,30 @@
 #!/usr/bin/env bash
 set -eou pipefail
 
+dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+app_name=$(basename $(dirname $(dirname $dir)))
 img="quay.io/skilbjo/router-logs"
 job_cmd="usr/local/deploy/bin/run-job"
 
-docker run --rm \
-  -e id_rsa="$(cat ~/.ssh/id_rsa_secret)" \
-  -e db_uri="$(echo $db_uri)" \
-  "$img" "$job_cmd"
+get_current_artifacts(){
+  # any scripts need updating?
+  git pull -f
+
+  # remove all app containers
+  set +e
+  docker ps -a | grep "$app_name" | awk '{print $1}' | uniq | xargs docker rm -f
+
+  # remove all app images
+  docker images | grep "$app_name" | awk '{print $3}' | uniq | xargs docker rmi -f
+  set -e
+}
+
+run_it(){
+  docker run --rm \
+    -e id_rsa="$(cat ~/.ssh/id_rsa_secret)" \
+    -e db_uri="$(echo $db_uri)" \
+    "$img" "$job_cmd"
+}
+
+get_current_artifacts && \
+  run_it

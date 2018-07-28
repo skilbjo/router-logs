@@ -60,9 +60,9 @@ load() {
   processed=$2
   staging="resources/staging.sql"
 
-  psql $db_uri -c "truncate table log_staging;"
+  psql $db_uri -c "truncate table tmp.log_staging;"
 
-  psql $db_uri -c "\copy log_staging(date,time,device,syslog_tag,program,log) from '$processed' delimiter ',' csv;"
+  psql $db_uri -c "\copy tmp.log_staging(date,time,device,syslog_tag,program,log) from '$processed' delimiter ',' csv;"
 
   psql $db_uri -f $staging
 }

@@ -13,6 +13,9 @@ function prereq() {
     touch ~/.ssh/id_rsa && \
     chmod 400 ~/.ssh/id_rsa && \
     echo "$id_rsa" >> ~/.ssh/id_rsa
+
+  update-ca-certificates && \
+    apk fix || echo 'Cant apk fix'
 }
 
 prereq
