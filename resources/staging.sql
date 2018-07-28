@@ -1,6 +1,6 @@
 begin;
 
-  insert into dw.log (
+  insert into logs.log (
     date, time, device, syslog_tag, program, log
   )
   with candidate_records as (
