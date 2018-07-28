@@ -6,7 +6,7 @@ begin;
   with candidate_records as (
     select
       staging.*
-    from dw.log
+    from logs.log
       right join tmp.log_staging staging on log.date       = staging.date
                                         and log.time       = staging.time
                                         and log.device     = staging.device

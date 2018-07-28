@@ -1,6 +1,7 @@
 FROM resin/armhf-alpine:3.5
 
 ENV PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/bin:/usr/lib/jvm/java-1.8-openjdk/bin" \
+    DEV="usr/local/deploy/bin/run-job" \
     CMD="usr/local/deploy/bin/run-job" \
     QEMU_EXECVE=1
 
