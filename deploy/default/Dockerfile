@@ -1,16 +1,20 @@
 FROM resin/armhf-alpine:3.5
 
-ENV CONSUL_PREFIX __CONSUL_PREFIX__
-ENV CONSUL_SECRET_PREFIX __CONSUL_SECRET_PREFIX__
-
-ENV QEMU_EXECVE 1
+ENV PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/bin:/usr/lib/jvm/java-1.8-openjdk/bin" \
+    CMD="usr/local/deploy/bin/run-job" \
+    QEMU_EXECVE=1
 
 COPY deploy/qemu/qemu-arm-static    /usr/bin/
+COPY deploy                         /usr/local/deploy
+COPY resources                      /resources
+COPY src                            /src
+COPY deploy/default/bashrc          /root/.bashrc
+COPY deploy/default/vimrc           /root/.vimrc
 
 RUN ["qemu-arm-static","/sbin/apk","-U","add", \
                        "postgresql-client",\
                        "curl","git","vim","openssh",\
-                       "bash","bash-completion",\
+                       "bash","bash-completion","ca-certificates",\
                        "tzdata","bc"]
 
 RUN ["qemu-arm-static","/bin/cp","usr/share/zoneinfo/America/Los_Angeles","/etc/localtime"]
@@ -35,9 +39,3 @@ RUN ["qemu-arm-static","/bin/chmod","600","/root/.ssh/id_rsa"]
 #RUN ["qemu-arm-static","/bin/bash","~/.vim/bundle/neobundle.vim/bin/install.sh"]
 #RUN ["qemu-arm-static","/bin/bash","~/.vim/bundle/bin/neoinstall"]
 
-COPY deploy                         /usr/local/deploy
-COPY deploy/default/bashrc          /root/.bashrc
-COPY deploy/default/vimrc           /root/.vimrc
-
-COPY resources                      /resources
-COPY src                            /src
