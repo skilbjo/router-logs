@@ -22,5 +22,4 @@ begin
 end
 $$ ;
 
-select crosstabcode('dw.log','date','device','count(*)','text'); ;
-
+select crosstabcode('logs.log','date','device','count(*)','text'); ;

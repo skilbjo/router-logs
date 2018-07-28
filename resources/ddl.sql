@@ -1,10 +1,9 @@
 -- begin; create schema dw; commit;
 
 begin;
-  drop table if exists dw.log;
-  drop table if exists dw.log_staging;
 
-  create table dw.log_staging (
+  drop table if exists logs.log;
+  create table logs.log (
     id              serial,
     date            date,
     time            time,
@@ -14,7 +13,8 @@ begin;
     log             text
   );
 
-  create table dw.log (
+  drop table if exists tmp.log_staging;
+  create table tmp.log_staging (
     id              serial,
     date            date,
     time            time,
@@ -23,4 +23,5 @@ begin;
     program         text,
     log             text
   );
+
 commit;
